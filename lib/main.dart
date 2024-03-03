@@ -56,6 +56,8 @@ class MyHomePage extends StatelessWidget {
                 Color? color;
                 if (state.isPositive) {
                   color = Colors.green;
+                }else{
+                  color = Colors.red;
                 }
                 // Display the count with styling.
                 return Text(
@@ -70,12 +72,19 @@ class MyHomePage extends StatelessWidget {
             const SizedBox(height: 20),
 
             /// Button to increment the counter when pressed.
-            Row(
+            Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
                   onPressed: () => counterCubit.increment(),
                   child: const Text('Increment'),
+                ),
+
+
+                // Button to decrement the counter when pressed.
+                ElevatedButton(
+                  onPressed: () => counterCubit.decrement(),
+                  child: const Text('Decrement'),
                 ),
               ],
             ),
